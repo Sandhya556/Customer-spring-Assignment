@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <title>show Form</title>
+</head>
+<body>
+<div class="container">
+    <form action="#" th:action="@{/products/save}" th:object="${PRODUCT}" method="post">
+        <input type="hidden" th:field="*{productId}"/>
+        <label>
+            <input type="text" th:field="*{productName}" placeholder="Product Name" class="form-control mb-4 col-15">
+        </label>
+        <br>
+        <label>
+            <input type="text" th:field="*{price}" placeholder="Product price in $" class="form-control mb-4 col-15">
+        </label>
+        <br>
+        <label>
+           Product Available:  <input type="checkbox">
+        </label>
+        <br><br>
+        <button type="submit" class="btn btn-success col-2">Save</button>
+    </form>
+</div>
+</body>
+</html>
